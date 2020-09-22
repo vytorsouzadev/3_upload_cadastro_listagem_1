@@ -35,7 +35,7 @@
     </head>
     <body>
         <section>
-            <?php 
+            <?php /*
                 //importa a classe
                 require_once("classes/Produto_class.php");
                 //INSTANCIA A CLASSE
@@ -57,9 +57,9 @@
                         <?php
                     }
                 }
-
+                */
             ?>
-            <a href="exibir_produto.php?id=<?=$value['id_produto']?>">
+            <a href="exibir_produto.php?id=<?//$value['id_produto']?>">
                                 <div>
                                     <img src="./../imagens/img_1.png">
                                     <h2>Camisetas PUMA</h2>

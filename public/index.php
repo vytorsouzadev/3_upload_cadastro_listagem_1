@@ -1,4 +1,9 @@
-
+<?php 
+    require_once("controller.php");
+    echo '<hr>';
+    echo 'Testando Conexao ao DataBase';
+    echo '<br/><hr>';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -85,7 +90,7 @@
 </html>
 
 <?php 
-
+/*
     if($isset($_POST['nome'])){
         //addslashes  =  e uma proteção - pesquisa isso depois
         $nome = addslashes($_POST['nome']);
@@ -116,18 +121,18 @@
             ?>
             <!--Começa codigo HTML-->
             */
-            echo "<script>alert('Produto Cadastrado com Sucesso!');</script>";
+           // echo "<script>alert('Produto Cadastrado com Sucesso!');</script>";
             /*
             <!--Termina codigo hmlt-->
             <?php
             */
-        }else{
+        //}else{
             //fecha a tag do php
 
-        }
+       // }
         
 
-    };
+   // };
   
    
         

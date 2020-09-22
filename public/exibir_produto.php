@@ -58,8 +58,8 @@
     <body>
         <section>
         <div>
-            <h1><?php echo $dadosDoProduto['nome_produto'];?></h1>
-            <p><b>Descrição: </b><?php $dadosDoProduto['descricao']; ?></p>
+            <h1><?php //echo $dadosDoProduto['nome_produto'];?></h1>
+            <p><b>Descrição: </b><?php// $dadosDoProduto['descricao']; ?></p>
         </div>
         <?php
                 foreach($imagensDoProduto as $value){
@@ -72,12 +72,7 @@
 
                 <?php
                 }
-            ?>     
-            <div id="imagens">
-                        <div class="caixa-img">
-                            <img src="imagens/<?php echo $value['nome_imagem']; ?>">
-                        </div>
-                    </div>           
+            ?>         
         </section>
     </body>
 </html>
