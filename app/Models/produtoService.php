@@ -1,5 +1,5 @@
 <?php 
-    class produtoService{
+    class ProdutoService{
 
         private $db;
         private $produto; 

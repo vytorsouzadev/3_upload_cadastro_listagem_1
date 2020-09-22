@@ -1,9 +1,4 @@
-<?php 
-    require_once("controller.php");
-    echo '<hr>';
-    echo 'Testando Conexao ao DataBase';
-    echo '<br/><hr>';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -75,7 +70,7 @@
     <body>
         <section>
             <a href="produtos.php">Ver Todos os Produtos</a>
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" action="controller.php?acao=cadastrarProduto">
                 <h1>ENVIO DE IMAGENS</h1>
                 <label for="nome">Nome do Produto</label>
                 <input type="text" name="nome" id="nome">
