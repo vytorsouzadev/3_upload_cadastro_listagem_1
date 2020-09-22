@@ -1,3 +1,4 @@
 <?php 
-    echo 'controller Publico';
+    require_once("./../app/Controllers/produto_controller.php");
+  
 ?>
