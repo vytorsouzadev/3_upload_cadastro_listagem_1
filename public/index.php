@@ -1,4 +1,10 @@
-
+<?
+    if(isset($_GET['cadastro']) && $_GET['cadastro'] == '1'){
+        echo 'produto Cadastrado com Sucesso!';
+    }elseif(isset($_GET['cadastro']) && $_GET['cadastro'] == '0'){
+        echo 'Falha ao Cadastrar Produto';
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -73,9 +79,9 @@
             <form method="POST" enctype="multipart/form-data" action="controller.php?acao=cadastrarProduto">
                 <h1>ENVIO DE IMAGENS</h1>
                 <label for="nome">Nome do Produto</label>
-                <input type="text" name="nome" id="nome">
+                <input type="text" name="nomeProduto" id="nome">
                 <label for="des">Descrição</label>
-                <textarea name="desc" id="desc"></textarea>
+                <textarea name="descricao" id="desc"></textarea>
                 <input type="file" name="foto[]" multiple id="foto">
                 <input type="submit" id="botao">
             </form>

@@ -1,8 +1,8 @@
 <?php 
     class Produto{
 
-        private $id_produto;
-        private $nome_produto;
+        private $idProduto;
+        private $nomeProduto;
         private $descricao;
         private $fotos = array();
 
