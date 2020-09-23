@@ -81,7 +81,7 @@
 
                 //faz Upload das Fotos Pro Servidor
                     //faz upload da Foto Atual
-                    move_uploaded_file($dado['caminhoFoto'],$diretorioApp."src/img".$dado['nomeFoto']);
+                    move_uploaded_file($dado['caminhoFoto'],$diretorioApp."src/img/".$dado['nomeFoto']);
             }
         }
 
