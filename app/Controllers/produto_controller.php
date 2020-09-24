@@ -104,7 +104,51 @@
 
 
     }elseif($acao == 'listarProdutos'){
-        echo 'Vamos Listar Seus Produtos';
+    // 1--> RECUPERAR PRODUTOS
+
+            //INSTANCIA A CLASSE PRODUTO
+            $produto = new Produto();
+            //INSTANCIA PRODUTOSERVICE
+            $produtoService = new ProdutoService($db,$produto);
+            //RECUPERA LISTARPRODUTOS
+            $produtos = $produtoService->listarProdutos();
+
+    // 2--> GUARDAR PRODUTOS EM UM ARRAY   
+        
+            //ARRAY PRA GUARDAR OS PRODUTOS
+            $listaProdutos = array();
+                //coloca os produtos dentro do Array
+                foreach ($produtos as $id){
+                    //PEGA ID, NOME, DESCRICAO -> PRODUTO
+                    $idPdt = $id->id_produto;
+                    $nomePdt = $id->nome_produto;
+                    $descricaoPdt = $id->descricao;
+                    //recupera 1 imagem do ProdutoSelecionado
+                    $idPR = new produto();
+                    $idPR->__set('idProduto',$idPdt);
+                    $imgCapa = $produtoService->buscarUmaImagemProduto($idPR);
+                    //VARIAVEL QUE VAI RECEBER A URL DA IMAGEM
+                    $imagemCapaProduto;
+                    foreach ($imgCapa as $key) {
+                        //ACESSA E PASSA A URL DA IMAGEM DO PRODUTO
+                        $imagemCapaProduto = $key->nome_IMAGEM;
+                    }
+                    //insere os Dados na ---> $listaProdutos
+                    $listaProdutos[]=array(
+                        'idProduto' => $idPdt,
+                        'nomeProduto' => $nomePdt,
+                        'descricaoProduto'=>$descricaoPdt,
+                        'imagemCapaProduto'=>$imagemCapaProduto);
+                    
+                }
+                /*
+                echo '<pre>LISTA DE PRODUTOS<hr>';
+                //print_r($listaProdutos);
+                echo '</pre>';
+                */
+
+
+        
     }
 
 ?>

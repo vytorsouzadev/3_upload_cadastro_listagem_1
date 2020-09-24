@@ -1,4 +1,4 @@
-<?php 
+<?php /*
     require_once('classes/Produto_class.php');
     $p = new Produto_class('formulario_produtos','localhost','root',"");
     //pega o id da url do produto
@@ -10,7 +10,7 @@
     }
     $dadosDoProduto = $p->buscarProdutoPorId($idProduto);
     $imagensDoProduto = $p->buscarImagensPorId($idProduto);
-
+    */
 ?>
 
 <!DOCTYPE html>
@@ -58,10 +58,10 @@
     <body>
         <section>
         <div>
-            <h1><?php //echo $dadosDoProduto['nome_produto'];?></h1>
-            <p><b>Descrição: </b><?php// $dadosDoProduto['descricao']; ?></p>
+            <h1>NOME PRODUTO</h1>
+            <p><b>Descrição: </b>DESCRICAO PRODUTO</p>
         </div>
-        <?php
+            <?/*
                 foreach($imagensDoProduto as $value){
                 ?>
                     <div id="imagens">
@@ -70,9 +70,15 @@
                         </div>
                     </div>
 
-                <?php
-                }
-            ?>         
+                <?}
+                
+            */?>     
+            <div id="imagens">
+                    <div class="caixa-img">
+                        <?$DiretorioImagem="./../app/src/img/"?>
+                        <img src="./../app/src/img/<?php //echo $value['nome_imagem']; ?>">
+                    </div>
+            </div>    
         </section>
     </body>
 </html>

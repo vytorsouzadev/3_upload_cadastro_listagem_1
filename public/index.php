@@ -75,7 +75,7 @@
     </head>
     <body>
         <section>
-            <a href="produtos.php">Ver Todos os Produtos</a>
+            <a href="listar_produtos.php">Ver Todos os Produtos</a>
             <form method="POST" enctype="multipart/form-data" action="controller.php?acao=cadastrarProduto">
                 <h1>ENVIO DE IMAGENS</h1>
                 <label for="nome">Nome do Produto</label>

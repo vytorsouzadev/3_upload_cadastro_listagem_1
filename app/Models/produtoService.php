@@ -53,7 +53,6 @@
                             $stmt->bindvalue(':nomeImagem',$nomeFoto);
                             $stmt->bindvalue(':idProduto',$idProduto);
                             $stmt->execute();
-                        
                     }
                 }
             } catch (\Throwable $th) {
@@ -62,12 +61,71 @@
         
         }
 
+        public function listarProdutos(){
+
+            //query
+            /*
+            $query = ' SELECT * FROM produtos INNER JOIN imagens
+                ON produtos.id_produto = imagens.fk_id_produto;
+            ';
+            */
+            $query = '
+                SELECT *
+                FROM produtos;
+            ';
+            //prepare->PDO
+            $stmt = $this->db->prepare($query);
+            //execute
+            $stmt->execute();
+            //return
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public function buscarUmaImagemProduto($idProduto){
+            
+            $this->produto = $idProduto;
+            $idImagem = $this->produto->__get('idProduto');
+            
+            //query
+            $query = '
+                SELECT 
+                    id_imagem,nome_IMAGEM
+                FROM 
+                    imagens
+                WHERE 
+                    fk_id_produto = :id
+                LIMIT 1;
+            ';
+            $stmt = $this->db->prepare($query);
+            //bindvalue
+            $stmt->bindValue(':id',$idImagem);
+            $stmt->execute();
+            //retorna o Array
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
         
+        //buscar todas as imagens
+        public function listaImagem($idProduto){
+            $this->produto = $idProduto;
+            $idImagem = $this->produto->__get('idProduto');
+            
+            //query
+            $query = '
+                SELECT 
+                    id_imagem,nome_IMAGEM
+                FROM 
+                    imagens
+                WHERE 
+                    fk_id_produto = :id;
+            ';
+            $stmt = $this->db->prepare($query);
+            //bindvalue
+            $stmt->bindValue(':id',$idImagem);
+            $stmt->execute();
+            //retorna o Array
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
 
-
-
-
-    
     
     
     }

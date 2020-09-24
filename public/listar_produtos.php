@@ -1,3 +1,17 @@
+<?php
+    //controla a rota
+    $controla = 'listarProdutos';
+    //importa controller
+    require_once("controller.php");
+    //listagem Produtos
+    /*
+    echo '<pre>';
+    print_r($listaProdutos);
+    echo '</pre>';
+    */
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -59,13 +73,32 @@
                 }
                 */
             ?>
+            <?php
+            //SE EXISTIR ITEM DENTRO DO ARRAY DE PRODUTOS ENTRA AQUI
+            if(isset($listaProdutos[0])){
+                foreach($listaProdutos as $item){?>
+                    
+                <a href="exibir_produto.php?acao=verProduto&id=<?=$item['idProduto']?>">
+                    <div>
+                        <?$diretorioIMG="./../app/src/img/"?>
+                        <img src="<?=$diretorioIMG?><?=$item['imagemCapaProduto']?>">
+                        <h2><?=$item['nomeProduto']?></h2>
+                    </div>
+                </a>
+                <?php
+                }
+                
+            }
+                
+            ?>
+            <!--
             <a href="exibir_produto.php?id=<?//$value['id_produto']?>">
-                                <div>
-                                    <img src="./../imagens/img_1.png">
-                                    <h2>Camisetas PUMA</h2>
-                                </div>
-                            </a>
-
+                <div>
+                    <img src="/../imagens/img_1.jpeg">
+                    <h2>PRODUTO TESTE</h2>
+                </div>
+            </a>
+            -->
            
         </section>
 
