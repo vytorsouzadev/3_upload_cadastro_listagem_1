@@ -14,5 +14,6 @@ create table imagens
 id_imagem int AUTO_INCREMENT PRIMARY key,
 nome_IMAGEM varchar(40),
 fk_id_produto int,
-FOREIGN KEY(fk_id_produto) REFERENCES produtos (id_produto)
+FOREIGN KEY(fk_id_produto) REFERENCES produtos (id_produto) 
+ON DELETE CASCADE
 );
