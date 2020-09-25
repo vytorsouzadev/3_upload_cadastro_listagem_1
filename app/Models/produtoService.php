@@ -109,7 +109,7 @@
             //echo 'chegou';
             $this->produto = $idProduto;
             $idImagem = $this->produto->__get('idProduto');
-            
+             
             //query
             $query = '
                 SELECT 
