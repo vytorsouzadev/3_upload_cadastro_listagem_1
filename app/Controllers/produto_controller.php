@@ -141,14 +141,22 @@
                         'imagemCapaProduto'=>$imagemCapaProduto);
                     
                 }
-                /*
-                echo '<pre>LISTA DE PRODUTOS<hr>';
-                //print_r($listaProdutos);
-                echo '</pre>';
-                */
-
-
+                
         
+    }elseif($acao == "verProduto"){
+        //echo 'Voce Solicitou Listagem de Produtos<hr>';
+        //recuperar Id Produto
+        $idProduto = $_GET['id'];
+        //INSTANCIA CLASSE PRODUTO
+        $produto = new Produto();
+        $produto->__set('idProduto',$idProduto);
+        //INSTANCIA PRODUTOSERVICE
+        $produtoService = new ProdutoService($db,$produto);
+        //busca Produtos!
+        $dadosProduto = $produtoService->verProduto();
+        //busca imagens do produto
+        $imgProduto = $produtoService->listaImagem($produto);
+
     }
 
 ?>

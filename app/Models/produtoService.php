@@ -106,6 +106,7 @@
         
         //buscar todas as imagens
         public function listaImagem($idProduto){
+            //echo 'chegou';
             $this->produto = $idProduto;
             $idImagem = $this->produto->__get('idProduto');
             
@@ -124,6 +125,24 @@
             $stmt->execute();
             //retorna o Array
             return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public function verProduto(){
+            //recupera Id
+            $idProduto = $this->produto->__get('idProduto');
+            //recupera dados do produto
+                //QUERY
+                $query = '
+                SELECT * FROM produtos WHERE id_produto = :idProduto;
+                ';
+                //prepara
+                $stmt = $this->db->prepare($query);
+                //add valor
+                $stmt->bindValue(':idProduto',$idProduto);
+                //executa
+                $stmt->execute();
+                //retorna
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
     

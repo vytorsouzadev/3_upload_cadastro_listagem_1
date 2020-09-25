@@ -20,7 +20,7 @@
                 //Adiciona As Rotas Aqui
                 array('acao' => 'cadastrarProduto'),  
                 array('acao' => 'listarProdutos'),
-                array('acao' => 'um'),
+                array('acao' => 'verProduto'),
                 array('acao' => 'dois'),
                 array('acao' => 'tres'),
             );

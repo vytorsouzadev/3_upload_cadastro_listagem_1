@@ -1,16 +1,6 @@
-<?php /*
-    require_once('classes/Produto_class.php');
-    $p = new Produto_class('formulario_produtos','localhost','root',"");
-    //pega o id da url do produto
-    $idProduto;
-    if(isset($_GET['id']) && !empty($_GET['id'])){
-        $idProduto = addslashes($_GET['id']);
-    }else{
-        header('Location: index.php');
-    }
-    $dadosDoProduto = $p->buscarProdutoPorId($idProduto);
-    $imagensDoProduto = $p->buscarImagensPorId($idProduto);
-    */
+<?php 
+   //nao precisa da var controla PQ ela so e solicita e ja recebe via GET
+    require_once("controller.php");
 ?>
 
 <!DOCTYPE html>
@@ -58,27 +48,19 @@
     <body>
         <section>
         <div>
-            <h1>NOME PRODUTO</h1>
-            <p><b>Descrição: </b>DESCRICAO PRODUTO</p>
+            <h1><?=strtoupper($dadosProduto[0]->nome_produto)?></h1>
+            <p><b>Descrição: </b><?=ucwords($dadosProduto[0]->descricao)?></p>
         </div>
-            <?/*
-                foreach($imagensDoProduto as $value){
-                ?>
-                    <div id="imagens">
+            <?foreach($imgProduto as $item){?>
+                <?$diretorioIMG="./../app/src/img/"?>
+                <div id="imagens">
                         <div class="caixa-img">
-                            <img src="imagens/<?php echo $value['nome_imagem']; ?>">
+                            <img src="$diretorioIMG<?=$item->nome_IMAGEM?>">
                         </div>
-                    </div>
+                </div>
 
-                <?}
-                
-            */?>     
-            <div id="imagens">
-                    <div class="caixa-img">
-                        <?$DiretorioImagem="./../app/src/img/"?>
-                        <img src="./../app/src/img/<?php //echo $value['nome_imagem']; ?>">
-                    </div>
-            </div>    
+            <?}?>
+            
         </section>
     </body>
 </html>
