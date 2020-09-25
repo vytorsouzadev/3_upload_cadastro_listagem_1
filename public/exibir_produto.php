@@ -55,7 +55,7 @@
                 <?$diretorioIMG="./../app/src/img/"?>
                 <div id="imagens">
                         <div class="caixa-img">
-                            <img src="$diretorioIMG<?=$item->nome_IMAGEM?>">
+                            <img src="<?=$diretorioIMG?><?=$item->nome_IMAGEM?>">
                         </div>
                 </div>
 
