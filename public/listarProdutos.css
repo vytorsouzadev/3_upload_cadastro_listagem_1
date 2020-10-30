@@ -1,0 +1,121 @@
+*{
+    font-family: ''Segoe UI', Tahoma, Geneva, Verdana, sans-serif'; margin:0;padding:0;
+}
+body{
+    background:white url("./../img/background.jpg") scroll;
+    background-size: cover;
+    /*align-items: center;*/
+}
+
+.cinza-back{background: #d7d5d8}
+.white{background: #fffafa}
+
+/*====== CONTAINER ========*/
+.container{width: 100%; float:left;text-align: center;}
+    
+#container-dad{
+    min-width: 320px;
+    min-height:480px;
+    width: 100%;
+}
+
+.border-r{
+    border-radius: 7px;
+}
+.border-lft{
+    border-radius: 15px 0 0 15px;
+}
+.border-rgt{
+    border-radius: 0 15px 15px 0;
+}
+.border-bt{
+    border-radius: 0 0 15px 15px;
+}
+.border-tp{
+    border-radius: 15px 15px 0 0;
+}
+
+.gray{background:gray;}
+.gray-c{color:rgb(117, 116, 116);}
+.yellow{background:yellow;}
+.green{background:green;}
+.blue{background:blue;}
+.borda-red{border:1px solid red;}
+.red{background:#fa3d4e ;}
+.laranja{background:#fb7d24 ;}
+.Amarelo{background: #f5af09;}
+
+
+/*=========== NAVBAR ==========*/
+#navbar{
+    height: 20%;
+    background-size: 400% 400%;
+    background: linear-gradient(-90deg, #EE7752, #e73c7e, #fb7d24, #f55d9c);
+    animation:change 5s ease-in infinite;
+}
+
+#navbar h2{
+    padding:15px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+/* ===== BOTAO VER PRODUTO ======*/
+.botao-verProduto{
+    margin: 15px;
+}
+
+/* ======== CONTAINER PRODUTOS =========*/
+#container-produtos{
+    padding:3%;
+    background: white;
+}
+
+/* ======== containerPdt =========*/
+.containerPdt{
+    width: 80%;
+    background: #f0f0f0;
+    width: 95%;
+    min-width: 320px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* ======== CARD PRODUTOS =========*/
+.cardProduto{
+    width: 100%;
+    min-width: 200px;
+    background: #c8c8c8;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.cardProduto .imagemProduto img{
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    max-height: 450px;
+    border-radius:10px;
+    margin: 0 auto;
+}
+.cardProduto .tituloProduto{
+    text-align: center;
+    padding: 10px;
+    text-transform:uppercase;
+    font-weight: 700;   
+}
+.cardProduto .tituloProduto a{
+    text-decoration: none;
+    color:black;
+}

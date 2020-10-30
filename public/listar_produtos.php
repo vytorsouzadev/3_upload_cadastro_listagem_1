@@ -13,94 +13,47 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <title>PRODUTOS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            section{
-                width: 70%;
-                margin: auto;
-                font-family: arial;
-            }
-            div{
-                width: 15%;
-                float: left;
-                padding: 1%;
-                background-color: rgb(123,104,238,.4);
-                margin: 10px;
-            }
-            img{
-                width: 100%;
-                height:150px;
-            }
-            h2{
-                font-size: 12pt;
-                color: white;
-                text-align: center;
-                background-color: rgba(0,0,0,0.5);
-                font-weight: normal;
-            }
-            p{
-                font-size: 10pt;
-            }
-        </style>
+        
+        <link rel="stylesheet" href="listarProdutos.css">
     </head>
     <body>
-        <section>
-            <?php /*
-                //importa a classe
-                require_once("classes/Produto_class.php");
-                //INSTANCIA A CLASSE
-                $p = new Produto_class('formulario_produto','localhost','root','');
-                //ACESSAR O METODO DE LISTAR PRODUTOS
-                $dadosProduto = $p->buscarProdutos();
+    <div id="container-dad">
+            <div id="navbar" class="container border-bt">
+                <h2>Todos Os Produtos</h2>
+            </div>
+            <a class="container botao-verProduto" href="index.php"><h2>Cadastrar Produto</h2></a>
+           
+           <!--container de Produtos-->
+            <div id="container-produtos" class=" container">
 
-                if(!empty($dadosProduto)){
-                    echo 'Ainda nao existe Produtos Cadastrados';
-                }else{
-                    foreach($dadosProduto as $value){
-                        ?>
-                            <a href="exibir_produto.php?id=<?=$value['id_produto']?>">
-                                <div>
-                                    <img src="imagens/<?=$value['foto_capa'];?>">
-                                    <h2><?=$value['nome_produto']?></h2>
-                                </div>
-                            </a>
-                        <?php
-                    }
-                }
-                */
-            ?>
-            <?php
+                <!--CArd de Produtos-->
+
+                <?php
             //SE EXISTIR ITEM DENTRO DO ARRAY DE PRODUTOS ENTRA AQUI
             if(isset($listaProdutos[0])){
                 foreach($listaProdutos as $item){?>
-                    
-                <a href="exibir_produto.php?acao=verProduto&id=<?=$item['idProduto']?>">
-                    <div>
-                        <?$diretorioIMG="./../app/src/img/"?>
-                        <img src="<?=$diretorioIMG?><?=$item['imagemCapaProduto']?>">
-                        <h2><?=$item['nomeProduto']?></h2>
+
+                <div class="container containerPdt">
+                    <div class="cardProduto container">
+                        <div class="imagemProduto">
+                            <?$diretorioIMG="./../app/src/img/"?>
+                            <img src="<?=$diretorioIMG?><?=$item['imagemCapaProduto']?>" alt="" >
+                        </div>
+                        <div id="" class="tituloProduto"><h2> <a href="exibir_produto.php?acao=verProduto&id=<?=$item['idProduto']?>"><?=$item['nomeProduto']?></a></h2></div>
                     </div>
-                </a>
+                </div>
+
                 <?php
                 }
                 
             }
                 
             ?>
-            <!--
-            <a href="exibir_produto.php?id=<?//$value['id_produto']?>">
-                <div>
-                    <img src="/../imagens/img_1.jpeg">
-                    <h2>PRODUTO TESTE</h2>
-                </div>
-            </a>
-            -->
-           
-        </section>
-
+        </div>
     </body>
 </html>

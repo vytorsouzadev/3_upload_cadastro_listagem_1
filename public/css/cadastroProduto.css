@@ -1,0 +1,138 @@
+*{
+    font-family: ''Segoe UI', Tahoma, Geneva, Verdana, sans-serif'; margin:0;padding:0;
+}
+body{
+    background:white url("./../img/background.jpg") scroll;
+    background-size: cover;
+    /*align-items: center;*/
+}
+
+.cinza-back{background: #d7d5d8}
+.white{background: #fffafa}
+
+/*====== CONTAINER ========*/
+.container{width: 100%; float:left;text-align: center;}
+    
+#container-dad{
+    min-width: 320px;
+    min-height:480px;
+    width: 100%;
+}
+
+.border-r{
+    border-radius: 7px;
+}
+.border-lft{
+    border-radius: 15px 0 0 15px;
+}
+.border-rgt{
+    border-radius: 0 15px 15px 0;
+}
+.border-bt{
+    border-radius: 0 0 15px 15px;
+}
+.border-tp{
+    border-radius: 15px 15px 0 0;
+}
+
+.gray{background:gray;}
+.gray-c{color:rgb(117, 116, 116);}
+.yellow{background:yellow;}
+.green{background:green;}
+.blue{background:blue;}
+.borda-red{border:1px solid red;}
+.red{background:#fa3d4e ;}
+.laranja{background:#fb7d24 ;}
+.Amarelo{background: #f5af09;}
+
+/*======  NAV-BAR  =========*/
+
+#navbar{
+    height: 20%;
+    color: #fff;
+    /*background: linear-gradient(-45deg, #EE7752, #e73c7e, #23A6D5, #23D5AB);*/
+    background: linear-gradient(-90deg, #EE7752, #e73c7e, #fb7d24, #f55d9c);
+    background-size: 400% 400%;
+    text-align: center;
+    animation: change 10s ease-in infinite;
+}
+#navbar h2{
+    padding: 15px 0;
+    text-transform: uppercase;
+}
+
+
+@keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+    
+}
+/*======= CaixaUploadImg =========*/
+#CaixaUploadImg{
+    margin-top: 5px;
+}
+#esquerdo-cima{
+    width: 90%;
+    margin:4.5%;
+    padding: 10px 5px 10px 5px;
+}
+#esquerdo-cima span{
+    color: #fa3d4e;
+}
+#esquerdo-cima #caixa #nome{
+    padding:15px 0
+}
+#esquerdo-cima #nome,#esquerdo-cima #nome label{
+    font-weight: 900;
+    font-size: 30px;
+}
+#esquerdo-cima #caixa #img{
+    margin-bottom: 15px;
+}
+#esquerdo-cima #caixa #img img{
+    width: 80%;
+}
+#esquerdo-cima #botao{
+    padding:15px 0;
+    display: inline;
+    padding:25px 0 0 0;
+    margin-top: 15px;
+    border-radius: 15px;
+}
+#esquerdo-cima #botao #icone{
+    display: inline-block;
+    padding: 15px 0 0 0;
+}
+#esquerdo-cima #botao #texto{
+    display: inline-block;
+    padding:0 0 5px 0 ;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/*=== LADO DIREITO =====*/
+#ladoDireito #caixa{
+    width: 90%;
+    margin: 2.5% 4.5%;
+    padding: 10px 5px 10px 5px;
+
+}
+#ladoDireito #caixa input,#ladoDireito #caixa textarea{
+    width: 80%;
+    height: 30px;
+    padding:5px;
+    margin:8px 0;
+    font-size: 15px;
+    border-radius: 7px;
+}
+#ladoDireito #caixa #descricao{
+    height: 150px;
+    text-align: justify;
+}
